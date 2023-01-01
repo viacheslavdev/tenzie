@@ -104,3 +104,27 @@ button {
 button:active {
     box-shadow: inset 4px 4px 19px -1px rgba(10,20,64,1);
 }
+
+.score-header {
+    font-family: 'Inter';
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.timer {
+    font-family: 'Karla';
+    color: rgb(89, 227, 145);
+    font-size: 20px;
+}
+
+.score-latest {
+    font-family: 'Karla';
+    color: tomato;
+}
+
+.no-results {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 400;
+    color: silver;
+}

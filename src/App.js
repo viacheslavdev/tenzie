@@ -2,8 +2,10 @@ import React from "react"
 import Tenzie from "./components/Tenzie"
 import {nanoid} from "nanoid"
 import Confetti from 'react-confetti'
+import Time from "./components/Time"
 
 export default function App() {
+
 
     const [tenzies, setTenzies] = React.useState(false)
 
@@ -18,9 +20,8 @@ export default function App() {
         const allSaveValue = randomNumbers.every(number => number.value === firstValue)
         if (allHeld && allSaveValue) {
             setTenzies(true)
-            console.log('finish')
         }
-    }, randomNumbers)
+    }, [randomNumbers])
 
     // Create only one Dice element
     function newDice() {
@@ -40,8 +41,6 @@ export default function App() {
         }
         return randomArray
     }
-
-
 
     // Hold a number from choosed element
     function rollDice() {
@@ -84,11 +83,12 @@ export default function App() {
                     <div className="numbers">
                         <div className="numbers-wrapper">
                             {outputNumbers}
-                        </div>  
+                        </div>
                     </div>
                     <button onClick={rollDice}>{tenzies ? "New game" : "Roll"}</button>
                 </div>
             </div>
+            <Time tenzies={tenzies} />
         </main>
     )
 }
